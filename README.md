@@ -1,7 +1,12 @@
+# Important:
+This repo is a fork of https://github.com/hmarr/codeowners. It is slightly customized to work with gitlab sections and different namings of users.
+
 # codeowners
 
-![build](https://github.com/hmarr/codeowners/workflows/build/badge.svg)
+![build](https://github.com/wompipomp/codeowners/workflows/build/badge.svg)
 [![PkgGoDev](https://pkg.go.dev/badge/github.com/hmarr/codeowners)](https://pkg.go.dev/github.com/hmarr/codeowners)
+
+
 
 A CLI and Go library for GitHub's [CODEOWNERS file](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners#codeowners-syntax).
 
