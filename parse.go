@@ -10,9 +10,9 @@ import (
 )
 
 var (
-	emailRegexp    = regexp.MustCompile(`\A[A-Z0-9a-z\._%\+\-]+@[A-Za-z0-9\.\-]+\.[A-Za-z]{2,6}\z`)
-	teamRegexp     = regexp.MustCompile(`\A@([a-zA-Z0-9\-]+\/[a-zA-Z0-9_\-]+)\z`)
-	usernameRegexp = regexp.MustCompile(`\A@([a-zA-Z0-9\-]+)\z`)
+	emailRegexp    = regexp.MustCompile(`\A[A-Z0-9a-z._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,6}\z`)
+	teamRegexp     = regexp.MustCompile(`\A@([a-zA-Z0-9\-.]+/[a-zA-Z0-9_\-]+)\z`)
+	usernameRegexp = regexp.MustCompile(`\A@([a-zA-Z0-9\-.]+)\z`)
 )
 
 const (
@@ -29,8 +29,8 @@ func ParseFile(f io.Reader) (Ruleset, error) {
 		lineNo++
 		line := scanner.Text()
 
-		// Ignore blank lines and comments
-		if len(line) == 0 || line[0] == '#' {
+		// Ignore blank lines and comments and gitlab sections
+		if len(line) == 0 || line[0] == '#' || line[0] == '[' {
 			continue
 		}
 
