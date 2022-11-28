@@ -1,3 +1,3 @@
 .PHONY: build
 build:
-	go build ./cmd/codeowners
+	go build -o co ./cmd/codeowners

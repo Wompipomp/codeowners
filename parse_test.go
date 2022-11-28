@@ -23,6 +23,14 @@ func TestParseRule(t *testing.T) {
 			},
 		},
 		{
+			name: "username owners with . in the name",
+			rule: "file.txt @user.foo",
+			expected: Rule{
+				pattern: mustBuildPattern(t, "file.txt"),
+				Owners:  []Owner{{Value: "user.foo", Type: "username"}},
+			},
+		},
+		{
 			name: "team owners",
 			rule: "file.txt @org/team",
 			expected: Rule{
